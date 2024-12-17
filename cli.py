@@ -131,40 +131,40 @@ def view_tests_by_lab():
 
 def main_menu():
     while True:
-        print("\nWelcome to the Application. What would you like to do?")
-        print("1. Create TM")
-        print("2. Update TM")
-        print("3. Delete TM")
-        print("4. Create Student")
-        print("5. Update Student")
-        print("6. Delete Student")
-        print("7. Assign Student to TM")
-        print("8. List TMs")
-        print("9. List Students")
-        print("10. View Students by TM")
+        print("\nWelcome to Precision Diagnostics. How can I help you?")
+        print("1. Create LAB")
+        print("2. Update LAB")
+        print("3. Delete LAB")
+        print("4. Create Test")
+        print("5. Update Test")
+        print("6. Delete Test")
+        print("7. Assign Test to LAB")
+        print("8. List LABs")
+        print("9. List Tests")
+        print("10. View Test by LAB")
         print("11. EXit")
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            create_tm()
+            create_lab()
         elif choice == "2":
-            update_tm()
+            update_lab()
         elif choice == "3":
-            delete_tm()
+            delete_lab()
         elif choice == "4":
-            create_student()
+            create_test()
         elif choice == "5":
-            update_student()
+            update_test()
         elif choice == "6":
-            delete_student()
+            delete_test()
         elif choice == "7":
-            assign_student()
+            assign_test()
         elif choice == "8":
-            list_tms()
+            list_labs()
         elif choice == "9":
-            list_students()
+            list_tests()
         elif choice == "10":
-            view_students_by_tm()
+            view_tests_by_lab()
         elif choice == "11":
             print("Exiting.......")
             sys.exit()
