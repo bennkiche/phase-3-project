@@ -88,18 +88,18 @@ def delete_test():
     session.commit()
     print(f"Test ID {test_id} deleted successfully")
 
-def assign_student():
-    student_id = int(input("Enter Student ID: "))
-    tm_id = int(input("Enter the new TM ID: "))
-    student = session.get(Student,student_id)
-    tm =  session.get(TM,tm_id)
+def assign_test():
+    test_id = int(input("Enter Test ID: "))
+    lab_id = int(input("Enter the new LAB ID: "))
+    test = session.get(Test,test_id)
+    lab =  session.get(LAB,lab_id)
 
-    if not student or not tm:
-        print("Invalid student Id or Tm id.")
+    if not test or not lab:
+        print("Invalid test Id or Lab id.")
         return
-    student.tm_id = tm_id
+    test.lab_id = lab_id
     session.commit()
-    print("TM assigned successfully")
+    print("LAB assigned successfully")
 
 def list_tms():
     tms = session.query(TM).all()
