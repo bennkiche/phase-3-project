@@ -35,16 +35,16 @@ def update_lab():
     session.commit()
     print(f"LAB ID {lab_id} updated successfully")
 
-def delete_tm():
-    tm_id = int(input("Enter TM ID to delete: "))
-    tm = session.get(TM,tm_id)
+def delete_lab():
+    lab_id = int(input("Enter LAB ID to delete: "))
+    lab = session.get(LAB,lab_id)
 
-    if not tm:
-        print(f"TM with ID {tm_id} deos not exist.")
+    if not lab:
+        print(f"LAB with ID {lab_id} deos not exist.")
         return
-    session.delete(tm)
+    session.delete(lab)
     session.commit()
-    print(f"TM ID {tm_id} deleted successfully.")
+    print(f"LAB ID {lab_id} deleted successfully.")
 
 def create_student():
     name = input("Enter student name: ")
