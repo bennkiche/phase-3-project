@@ -101,12 +101,12 @@ def assign_test():
     session.commit()
     print("LAB assigned successfully")
 
-def list_tms():
-    tms = session.query(TM).all()
-    if not tms:
-        print("No TMs found.")
-    for tm in tms:
-        print(tm)
+def list_labs():
+    labs = session.query(LAB).all()
+    if not labs:
+        print("No LABs found.")
+    for lab in labs:
+        print(lab)
 
 def list_students():
     students = session.query(Student).all()
