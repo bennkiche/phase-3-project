@@ -108,12 +108,12 @@ def list_labs():
     for lab in labs:
         print(lab)
 
-def list_students():
-    students = session.query(Student).all()
-    if not students:
-        print("No Students found.")
-    for student in students:
-        print(student)
+def list_tests():
+    tests = session.query(Test).all()
+    if not tests:
+        print("No Tests found.")
+    for test in tests:
+        print(test)
 
 def view_students_by_tm():
     tm_id = int(input("Enter TM ID to view students: "))
