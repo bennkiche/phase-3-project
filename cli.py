@@ -46,18 +46,18 @@ def delete_lab():
     session.commit()
     print(f"LAB ID {lab_id} deleted successfully.")
 
-def create_student():
-    name = input("Enter student name: ")
-    age = int(input("Enter student age: "))
-    tm_id = int(input("Enter TM ID: "))
-    tm = session.get(TM,tm_id)
-    if not tm:
-        print(f"TM with ID {tm_id} does not exist")
+def create_test():
+    name = input("Enter test name: ")
+    price = int(input("Enter test price: "))
+    lab_id = int(input("Enter LAB ID: "))
+    lab = session.get(LAB,lab_id)
+    if not lab:
+        print(f"LAB with ID {lab_id} does not exist")
         return
-    student = Student(name= name,age=age,tm_id=tm_id)
-    session.add(student)
+    test = Test(name= name,price=price,lab_id=lab_id)
+    session.add(test)
     session.commit()
-    print(f"Student '{name}' created with ID {student.id} and assigned to TM_ID {tm_id}")
+    print(f"Test '{name}' created with ID {test.id} and assigned to LAB_ID {lab_id}")
 
 def update_student():
     student_id = int(input("Enter Student ID to update: "))
