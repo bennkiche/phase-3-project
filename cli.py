@@ -24,16 +24,16 @@ def create_lab():
     session.commit()
     print(f"LAB '{name}' created with ID {lab.id}")
 
-def update_tm():
-    tm_id = int(input("Enter TM ID to update: "))
-    tm = session.get(TM,tm_id)
-    if not tm:
-        print(f"TM with ID {tm_id} does not exist.")
+def update_lab():
+    lab_id = int(input("Enter LAB ID to update: "))
+    lab = session.get(LAB,lab_id)
+    if not lab:
+        print(f"LAB with ID {lab_id} does not exist.")
         return
-    tm.name = input(f"Enter new name for TM (current: {tm.name}): ") or tm.name
-    tm.email = input(f"Enter new email for TM (current: {tm.email}): ") or tm.email
+    lab.name = input(f"Enter new name for LAB (current: {lab.name}): ") or lab.name
+    lab.section = input(f"Enter new section for LAB (current: {lab.section}): ") or lab.section
     session.commit()
-    print(f"TM ID {tm_id} updated successfully")
+    print(f"LAB ID {lab_id} updated successfully")
 
 def delete_tm():
     tm_id = int(input("Enter TM ID to delete: "))
