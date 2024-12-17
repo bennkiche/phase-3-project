@@ -115,19 +115,19 @@ def list_tests():
     for test in tests:
         print(test)
 
-def view_students_by_tm():
-    tm_id = int(input("Enter TM ID to view students: "))
-    tm = session.get(TM,tm_id)
-    if not tm:
-        print("TM with ID {tm_id} does not exist")
+def view_tests_by_lab():
+    lab_id = int(input("Enter LAB ID to view tests: "))
+    lab = session.get(LAB,lab_id)
+    if not lab:
+        print("LAB with ID {lab_id} does not exist")
         return
-    students = tm.students
-    if not students:
-        print(f"No students found for TM with ID {tm_id}")
+    tests = lab.tests
+    if not tests:
+        print(f"No tests found for LAB with ID {lab_id}")
         return
-    print(f"Students belonging to TM '{tm.name}' (ID {tm_id}):")
-    for student in students:
-        print(student)
+    print(f"Tests belonging to LAB'{lab.name}' (ID {lab_id}):")
+    for test in tests:
+        print(test)
 
 def main_menu():
     while True:
