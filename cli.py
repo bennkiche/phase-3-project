@@ -59,34 +59,34 @@ def create_test():
     session.commit()
     print(f"Test '{name}' created with ID {test.id} and assigned to LAB_ID {lab_id}")
 
-def update_student():
-    student_id = int(input("Enter Student ID to update: "))
-    student = session.get(Student,student_id)
+def update_test():
+    test_id = int(input("Enter Test ID to update: "))
+    test = session.get(Test,test_id)
 
-    if not student:
-        print(f"Student with id {student_id} does not exist")
+    if not test:
+        print(f"Test with id {test_id} does not exist")
         return
-    student.name = input("Enter new name for student (current: {student.name}): ") or student.name
-    student.age = input("Enter new age for student (current: {student.age}): ") or student.age
-    new_tm_id = input(f"Enter new TM ID for Student (current: {student.tm_id}): ") or student.tm_id
-    if new_tm_id:
-        new_tm = session.get(TM,int(new_tm_id))
-        if not new_tm:
-            print (f"TM with ID {new_tm_id} does not exist. Skipping TM update.")
+    test.name = input("Enter new name for test (current: {test.name}): ") or test.name
+    test.price = input("Enter new price for test (current: {test.price}): ") or test.price
+    new_lab_id = input(f"Enter new LAB ID for Test (current: {test.lab_id}): ") or test.lab_id
+    if new_lab_id:
+        new_lab = session.get(LAB,int(new_lab_id))
+        if not new_lab:
+            print (f"LAB with ID {new_lab_id} does not exist. Skipping LAB update.")
         else: 
-            student.tm_id = new_tm_id
+            test.lab_id = new_lab_id
     session.commit()
-    print(f"Student ID {student_id} updated successfully")
+    print(f"Test ID {test_id} updated successfully")
 
-def delete_student():
-    student_id = int(input("Enter Student id to delete: "))
-    student = session.get(Student,student_id)
-    if not student:
-        print(f"Student with ID {student_id} does not exist")
+def delete_test():
+    test_id = int(input("Enter Test id to delete: "))
+    test = session.get(Test,test_id)
+    if not test:
+        print(f"Test with ID {test_id} does not exist")
         return
-    session.delete(student)
+    session.delete(test)
     session.commit()
-    print(f"Student ID {student_id} deleted successfully")
+    print(f"Test ID {test_id} deleted successfully")
 
 def assign_student():
     student_id = int(input("Enter Student ID: "))
