@@ -1,6 +1,6 @@
 import sys
 from sqlalchemy import create_engine
-from sq1 import sessionmaker
+from sqlalchemy.orm import sessionmaker
 from models import Base,LAB,Test
 
 
